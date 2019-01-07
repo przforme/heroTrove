@@ -1,0 +1,18 @@
+doctype html
+html(lang='pl')
+  head
+    title Hero Trove
+    link(href='styles/main.css', rel='stylesheet')
+
+  body
+    .content
+      include header.pug
+      if(message)
+        include show_message.pug
+      .row
+        include section.pug
+        include user.pug
+
+      footer
+        p
+          | cool footer with lots of copyrights

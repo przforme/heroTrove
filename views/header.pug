@@ -1,0 +1,13 @@
+.nav-img
+header
+  - 
+    navbar = [
+      {name: "Main Page", file: "/"}
+    ]
+  
+  ul
+    each elem in navbar
+      li
+        a(href=elem.file, title=elem.name)=elem.name
+    li
+      a.icon(href="javascript:void(0);")
