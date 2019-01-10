@@ -2,6 +2,7 @@ doctype html
 html(lang='pl')
   head
     title Hero Trove
+    meta(name="viewport", content="width=device-width, initial-scale=1")
     link(href='styles/main.css', rel='stylesheet')
 
   body
@@ -11,7 +12,11 @@ html(lang='pl')
         include show_message.pug
       .row
         include section.pug
-        include user.pug
+        .side
+          if (logged)
+            include panel.pug
+          else
+            include user.pug
 
       footer
         p

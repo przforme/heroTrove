@@ -1,44 +1,42 @@
-.side
-  script.
+script.
+  function showLogin() {
+    document.getElementById("register").style.display = "none";
+    document.getElementById("login").style.display = "block";
+    document.getElementById("logTab").classList.add("active");
+    document.getElementById("regTab").classList.remove("active");
+  }
+  function showRegister() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("register").style.display = "block";
+    document.getElementById("regTab").classList.add("active");
+    document.getElementById("logTab").classList.remove("active");
+  }
 
-    function showLogin() {
-      document.getElementById("register").style.display = "none";
-      document.getElementById("login").style.display = "block";
-      document.getElementById("logTab").classList.add("active");
-      document.getElementById("regTab").classList.remove("active");
-    }
-    function showRegister() {
-      document.getElementById("login").style.display = "none";
-      document.getElementById("register").style.display = "block";
-      document.getElementById("regTab").classList.add("active");
-      document.getElementById("logTab").classList.remove("active");
-    }
-  
-  .sideTab#logTab.active(onClick='showLogin()') Login
-  .sideTab#regTab(onClick='showRegister()') Register
-  .logreg#register(style="display: none;")
-    form(action = "/register", method = "POST")
-      div
-        label(for = "email") E-mail: 
-        br
-        input(name = "email", type="email", required placeholder="Enter your email")
+.sideTab#logTab.active(onClick='showLogin()') Login
+.sideTab#regTab(onClick='showRegister()') Register
+.logreg#register(style="display: none;")
+  form(action = "/register", method = "POST")
+    div
+      label(for = "email") E-mail: 
       br
-      div
-        label(for = "password") Password: 
-        br
-        input(name = "password", required type="password")
+      input(name = "email", type="email", required placeholder="Enter your email")
+    br
+    div
+      label(for = "password") Password: 
       br
-      button(type = "submit") Create new user
-  .logreg#login
-    form(action = "/login", method = "POST")
-      div
-        label(for = "email") E-mail: 
-        br
-        input(name = "email", type="email", required placeholder="Enter your email")
+      input(name = "password", required type="password")
+    br
+    button(type = "submit") Create new user
+.logreg#login
+  form(action = "/login", method = "POST")
+    div
+      label(for = "email") E-mail: 
       br
-      div
-        label(for = "password") Password: 
-        br
-        input(name = "password", required type="password")
+      input(name = "email", type="email", required placeholder="Enter your email")
+    br
+    div
+      label(for = "password") Password: 
       br
-      button(type = "submit") Login
+      input(name = "password", required type="password")
+    br
+    button(type = "submit") Login
