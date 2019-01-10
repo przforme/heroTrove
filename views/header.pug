@@ -1,13 +1,14 @@
-.nav-img
 header
+  .nav-img
   - 
     navbar = [
       {name: "Main Page", file: "/"}
     ]
   
-  ul
-    each elem in navbar
-      li
-        a(href=elem.file, title=elem.name)=elem.name
-    li
-      a.icon(href="javascript:void(0);")
+  #myTopnav.topnav
+    ul
+      each elem in navbar
+        li
+          a(href=elem.file, title=elem.name)=elem.name
+      a.icon(href="javascript:void(0);", onClick="navMobile()")
+        i.fa.fa-bars

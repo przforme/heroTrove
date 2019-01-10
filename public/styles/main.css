@@ -1,175 +1,235 @@
 html {
-    box-sizing:border-box;
-    -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%;
-    overflow-x:hidden
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden
 }
 
-*, *:before, *:after {
-    box-sizing:inherit
+*,
+*:before,
+*:after {
+  box-sizing: inherit
 }
 
 body {
-    background-color: whitesmoke;
-    font-family: Noto Sans, Helvetica Neue, Segoe UI, Helvetica, Verdana, Arial, sans-serif;
-    font-weight: 400;
-    margin:0;
-    line-height:1.5
+  background-color: whitesmoke;
+  font-family: Noto Sans, Helvetica Neue, Segoe UI, Helvetica, Verdana, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.5
 }
 
-header {
-    position: sticky;
+@media screen and (max-width: 600px) {
+  header .topnav li:not(:first-child) {
+    display: none;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  header .topnav .responsive {
+    position: relative;
+  }
+
+  header .topnav .responsive a.icon {
+    position: absolute;
+    right: 0;
     top: 0;
+  }
+
+  header .topnav .responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
-header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #dddddd;
-}
+@media screen and (max-width: 1024px) {
+  .content {
+    width: auto;
+  }
 
-header li {
-    float: left;
-}
+  navbar .nav-img {
+    display: none;
+  }
 
-header li a {
+  header .topnav a.icon {
+    float: right;
     display: block;
     color: black;
-    padding: 8px;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+  }
+
+  header .topnav .responsive {
+    position: relative;
+  }
+
+  header .topnav .responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  header .topnav .responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
-header li a:hover {
-    background-color: #cccccc;
-}
-
-.content {
+@media screen and (min-width: 1024px) {
+  .content {
     width: 1024px;
     margin-left: auto;
     margin-right: auto;
-}
+  }
 
-.nav-img {
+  .nav-img {
     height: 300px;
-    background-color: blanchedalmond;
+    background-color: sandybrown;
+    background-image: url("/static/header.png");
+    background-size: cover;
+    background-blend-mode: luminosity;
     border-radius: 2px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  header .topnav a.icon {
+    display: none;
+  }
 }
 
-.registerError, .registerPass {
-    padding: 5px;
-    margin:1px;
-    background-color: maroon;
-    color: white;
-    border-radius: 3px;
+header .topnav {
+  position: sticky;
+  top: 0;
+}
+
+header .topnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dddddd;
+}
+
+header .topnav li {
+  float: left;
+}
+
+header .topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+header .topnav li a:hover {
+  background-color: #cccccc;
+}
+
+.registerError,
+.registerPass {
+  padding: 5px;
+  margin: 1px;
+  background-color: maroon;
+  color: white;
+  border-radius: 3px;
 }
 
 .registerPass {
-    background-color: dodgerblue;
+  background-color: dodgerblue;
 }
 
-.row {  
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media only screen and (max-width: 600px) {
-    .content {
-        width: auto;
-    }
-    header li:not(:first-child) {display: none;}
-    header li a.icon {
-      float: right;
-      display: block;
-    }
-    .row {   
-        flex-direction: column;
-    }
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .side {
-    flex: 30%;
-    background-color: #f1f1f1;
+  flex: 30%;
+  background-color: #f1f1f1;
 }
 
 .sideTab {
-    display: inline-block;
-    padding: 8px;
-    text-align: center;
-    width: 50%;
-    background-color: blanchedalmond;
-    color: slategray;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: inline-block;
+  padding: 8px;
+  text-align: center;
+  width: 50%;
+  background-color: blanchedalmond;
+  color: slategray;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.sideTab:hover {
-    background-color: rgb(255, 247, 235);
-    color: black;
+.sideTab:hover,
+.sideTab.active:hover {
+  background-color: antiquewhite;
+  color: black;
 }
 
 .sideTab.active {
-    background-color: wheat
-}
-.sideTab.active:hover {
-    background-color: #fcf5e8 /* wheat, 15% lighter */
+  background-color: wheat
 }
 
 .logreg {
-    padding: 30px;
-    overflow: auto;
+  padding: 30px;
+  overflow: auto;
 }
 
 .logreg input {
-    width: 100%;
-    background-color: white;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px 32px;
+  width: 100%;
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 32px;
 }
 
-.logreg button, .panel button {
-    width: 100%;
-    background-color: tan;
-    border: none;
-    color: white;
-    padding: 5px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-.logreg button:hover, .panel button:hover {
-    background-color: burlywood;
+.logreg button,
+.panel button {
+  width: 100%;
+  background-color: tan;
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.logreg button:active, .panel button:active {
-    background-color: peru;
+.logreg button:hover,
+.panel button:hover {
+  background-color: burlywood;
+}
+
+.logreg button:active,
+.panel button:active {
+  background-color: peru;
 }
 
 .panel {
-    padding: 30px;
-    padding-top: 10px;
-    overflow: auto;
+  padding: 30px;
+  padding-top: 10px;
+  overflow: auto;
 }
 
 .main {
-    flex: 70%;
-    background-color: white;
-    padding: 20px;
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
 }
 
 footer {
-    text-align: center;
+  text-align: center;
 }
