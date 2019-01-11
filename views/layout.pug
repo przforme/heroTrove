@@ -1,20 +1,26 @@
 doctype html
-html(lang='pl')
+html(lang='en')
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    script(src='scripts/main.js')
-    link(href='styles/main.css', rel='stylesheet')
+    script(src='/scripts/util_script.js')
+    script(src='https://www.google.com/recaptcha/api.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    link(href='/styles/main.css', rel='stylesheet')
     link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet")
     title Hero Trove
 
   body
     .content
       include header.pug
-      if(message)
+      if errors 
+        each error in errors
+          .registerError!= error.msg
+      if message
         include show_message.pug
       .row
-        include section.pug
+        .main
+          block content
         .side
           if (logged)
             include panel.pug

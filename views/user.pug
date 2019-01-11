@@ -2,15 +2,17 @@
 .sideTab#regTab(onClick='showRegister()') Register
 .logreg#register(style="display: none;")
   form(action = "/register", method = "POST")
-    div
+    div.form-group
       label(for = "email") E-mail: 
       br
-      input(name = "email", type="email", required placeholder="Enter your email")
+      input#email.form-control(name = "email", type="email", required placeholder="Enter your email")
     br
     div
       label(for = "password") Password: 
       br
-      input(name = "password", required type="password")
+      input#password.form-control(name = "password", required type="password")
+    br
+    .g-recaptcha(data-sitekey="6LfUrogUAAAAALZzMfLMFILz11S2Fy27uCIC1JSX", style="width: 304px; margin-left: auto; margin-right: auto;")
     br
     button(type = "submit") Create new user
 .logreg#login

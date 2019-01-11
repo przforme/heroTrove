@@ -20,7 +20,7 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  header .topnav li:not(:first-child) {
+  .topnav li:not(:first-child) {
     display: none;
   }
 
@@ -28,17 +28,17 @@ body {
     flex-direction: column;
   }
 
-  header .topnav .responsive {
+  .topnav .responsive {
     position: relative;
   }
 
-  header .topnav .responsive a.icon {
+  .topnav .responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
 
-  header .topnav .responsive a {
+  .topnav .responsive a {
     float: none;
     display: block;
     text-align: left;
@@ -54,7 +54,7 @@ body {
     display: none;
   }
 
-  header .topnav a.icon {
+  .topnav a.icon {
     float: right;
     display: block;
     color: black;
@@ -63,17 +63,17 @@ body {
     text-decoration: none;
   }
 
-  header .topnav .responsive {
+  .topnav .responsive {
     position: relative;
   }
 
-  header .topnav .responsive a.icon {
+  .topnav .responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
 
-  header .topnav .responsive a {
+  .topnav .responsive a {
     float: none;
     display: block;
     text-align: left;
@@ -89,26 +89,24 @@ body {
 
   .nav-img {
     height: 300px;
-    background-color: sandybrown;
     background-image: url("/static/header.png");
     background-size: cover;
-    background-blend-mode: luminosity;
     border-radius: 2px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  header .topnav a.icon {
+  .topnav a.icon {
     display: none;
   }
 }
 
-header .topnav {
+.topnav {
   position: sticky;
-  top: 0;
+  top: 0px;
 }
 
-header .topnav ul {
+.topnav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -116,11 +114,11 @@ header .topnav ul {
   background-color: #dddddd;
 }
 
-header .topnav li {
+ .topnav li {
   float: left;
 }
 
-header .topnav li a {
+.topnav li a {
   display: block;
   color: black;
   text-align: center;
@@ -128,7 +126,7 @@ header .topnav li a {
   text-decoration: none;
 }
 
-header .topnav li a:hover {
+.topnav li a:hover {
   background-color: #cccccc;
 }
 
@@ -151,7 +149,7 @@ header .topnav li a:hover {
 }
 
 .side {
-  flex: 30%;
+  flex: 35%;
   background-color: #f1f1f1;
 }
 
@@ -181,7 +179,7 @@ header .topnav li a:hover {
 }
 
 .logreg {
-  padding: 30px;
+  padding: 25px;
   overflow: auto;
 }
 
@@ -219,13 +217,13 @@ header .topnav li a:hover {
 }
 
 .panel {
-  padding: 30px;
+  padding: 25px;
   padding-top: 10px;
   overflow: auto;
 }
 
 .main {
-  flex: 70%;
+  flex: 65%;
   background-color: white;
   padding: 20px;
 }

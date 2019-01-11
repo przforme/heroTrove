@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  h1 User: #{user.name}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Heroes
+    
+    dl
+      if(user_heroes)
+        each hero in user_heroes
+          dt 
+            a(href=hero.url) #{hero.heroName}
+          dd #{hero.heroDesc}
+
+      else
+        p This user has no heroes.

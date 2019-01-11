@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1 #{title}: #{hero.heroName}
+  
+  p #[strong Made By:] 
+    a(href=hero.owner.url) #{hero.owner.name}
+  p #[strong Description:] #{hero.heroDesc}

@@ -1,14 +1,18 @@
 header
   .nav-img
-  - 
-    navbar = [
-      {name: "Main Page", file: "/"}
-    ]
-  
-  #myTopnav.topnav
-    ul
-      each elem in navbar
-        li
-          a(href=elem.file, title=elem.name)=elem.name
-      a.icon(href="javascript:void(0);", onClick="navMobile()")
-        i.fa.fa-bars
+- 
+  navbar = [
+    {name: "Hero Trove", file: "/"},
+    {name: "Heroes List", file: "/heroes/list"}
+  ]
+
+#myTopnav.topnav
+  ul
+    each entry in navbar
+      li
+        a(href=entry.file, title=entry.name)=entry.name
+    if(logged)
+      li
+        a(href='#', title="New Hero!", onClick="createHero()")="New Hero!"
+    a.icon(href="javascript:void(0);", onClick="navMobile()")
+      i.fa.fa-bars

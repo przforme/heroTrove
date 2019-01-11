@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  if(hero_list)
+    ul
+      each hero in hero_list
+        li 
+          a(href=hero.url) #{hero.heroName}
+
+  else
+    li There are no heroes.
